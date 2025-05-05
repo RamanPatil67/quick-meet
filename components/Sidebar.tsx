@@ -1,4 +1,5 @@
 'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -10,35 +11,35 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <section className="sticky left-0 top-0 flex h-screen w-fit flex-col  justify-between  bg-dark-1 p-6 pt-28 text-white max-sm:hidden lg:w-[264px]">
-      <div className="flex flex-1 flex-col gap-6">
-        {sidebarLinks.map((item) => {
-          const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`);
-          
+    <section className="sticky left-0 top-0 flex h-screen w-fit flex-col justify-between border-r border-slate-800 bg-slate-900 pt-24 text-white max-sm:hidden lg:w-[264px]">
+      <nav className="flex flex-1 flex-col gap-5 px-2 lg:px-4">
+        {sidebarLinks.map((link) => {
+          const isActive = pathname === link.route || pathname.startsWith(`${link.route}/`);
+
           return (
             <Link
-              href={item.route}
-              key={item.label}
+              key={link.route}
+              href={link.route}
               className={cn(
-                'flex gap-4 items-center p-4 rounded-lg justify-start',
-                {
-                  'bg-blue-1': isActive,
-                }
+                'flex items-center gap-3 rounded-lg px-4 py-3 transition-colors',
+                isActive
+                  ? 'bg-indigo-600 text-white'
+                  : 'text-gray-400 hover:bg-slate-700/50 hover:text-white'
               )}
             >
               <Image
-                src={item.imgURL}
-                alt={item.label}
+                src={link.imgURL}
+                alt={link.label}
                 width={24}
                 height={24}
               />
-              <p className="text-lg font-semibold max-lg:hidden">
-                {item.label}
-              </p>
+              <span className="hidden text-base font-medium lg:block">
+                {link.label}
+              </span>
             </Link>
           );
         })}
-      </div>
+      </nav>
     </section>
   );
 };

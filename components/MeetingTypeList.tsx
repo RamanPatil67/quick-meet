@@ -70,7 +70,11 @@ const MeetingTypeList = () => {
   const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetail?.id}`;
 
   return (
-    <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+    <section className="flex flex-col gap-5 text-white">
+        <div className="flex items-center justify-between">
+        <h2 className="text-2xl font-bold text-white">Meeting Types</h2>
+      </div>
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
       <HomeCard
         img="/icons/add-meeting.svg"
         title="New Meeting"
@@ -172,6 +176,7 @@ const MeetingTypeList = () => {
         buttonText="Start Meeting"
         handleClick={createMeeting}
       />
+      </div>
     </section>
   );
 };
