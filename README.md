@@ -1,10 +1,5 @@
 <div align="center">
-  <br />
-    <a href="#" target="_blank">
-      <img src="https://github.com/adrianhajdin/zoom-clone/assets/67959015/f09a8421-67d3-45ce-b9bc-a791cdc2774b" alt="Quick.meet Banner">
-    </a>
-  
-  <br />
+
 
   <div>
     <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="typescript" />
@@ -77,5 +72,5 @@ Make sure you have the following installed:
 ### 🚀 Cloning the Repository
 
 ```bash
-git clone https://github.com/your-username/quick-meet.git
+git clone https://github.com/RamanPatil67/quick-meet.git
 cd quick-meet
